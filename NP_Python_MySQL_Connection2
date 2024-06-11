@@ -1,0 +1,99 @@
+import mysql.connector
+mydb=mysql.connector.connect(host='localhost',password='1234',user='root')
+
+if mydb.is_connected():
+   print("Connection Established")
+mycursor=mydb.cursor()
+mycursor.execute("show databases")
+for db in mycursor:
+    print(db)
+import mysql.connector
+mydb=mysql.connector.connect(host='localhost',password='1234',user='root')
+mycursor=mydb.cursor()
+mycursor.execute("create database SODS")
+import mysql.connector
+mydb=mysql.connector.connect(host='localhost',password='1234',user='root',database='sods')
+mycursor=mydb.cursor()
+t="CREATE TABLE Book(bookid int(4),title varchar(20),price float(5,2))"
+mycursor.execute(t)
+import mysql.connector
+mydb=mysql.connector.connect(host='localhost',password='1234',user='root',database='sods')
+mycursor=mydb.cursor()
+mycursor.execute("show tables")
+for db in mycursor:
+    print(db)
+import mysql.connector
+mydb=mysql.connector.connect(host='localhost',password='1234',user='root',database='sods')
+mycursor=mydb.cursor()
+s="INSERT INTO book(bookid,title,price) VALUES(%s,%s,%s)"
+r1=(1,'Python2',350)
+mycursor.execute(s,r1)
+mydb.commit()
+import mysql.connector
+mydb=mysql.connector.connect(host='localhost',password='1234',user='root',database='sods')
+mycursor=mydb.cursor()
+s="SELECT * from book"
+mycursor.execute(s)
+result=mycursor.fetchall()
+for rec in result:
+    print(rec)
+import mysql.connector
+mydb=mysql.connector.connect(host='localhost',password='1234',user='root',database='sods')
+mycursor=mydb.cursor()
+s="INSERT INTO book(bookid,title,price) VALUES(%s,%s,%s)"
+r1=(1,'SQL',550)
+mycursor.execute(s,r1)
+mydb.commit()
+import mysql.connector
+mydb=mysql.connector.connect(host='localhost',password='1234',user='root',database='sods')
+mycursor=mydb.cursor()
+s="SELECT * from book"
+mycursor.execute(s)
+result=mycursor.fetchall()
+for rec in result:
+    print(rec)
+import mysql.connector
+mydb=mysql.connector.connect(host='localhost',password='1234',user='root',database='sods')
+mycursor=mydb.cursor()
+s="INSERT INTO book(bookid,title,price) VALUES(%s,%s,%s)"
+r1=(1,'ML',450)
+mycursor.execute(s,r1)
+mydb.commit()
+import mysql.connector
+mydb=mysql.connector.connect(host='localhost',password='1234',user='root',database='sods')
+mycursor=mydb.cursor()
+s="SELECT * from book"
+mycursor.execute(s)
+result=mycursor.fetchall()
+for rec in result:
+    print(rec)
+import mysql.connector
+mydb=mysql.connector.connect(host='localhost',password='1234',user='root',database='sods')
+mycursor=mydb.cursor()
+s= "UPDATE book SET price=price+100 WHERE price=350"
+mycursor.execute(s)
+mydb.commit()
+print(mycursor.rowcount,"Records affected")
+import mysql.connector
+mydb=mysql.connector.connect(host='localhost',password='1234',user='root',database='sods')
+mycursor=mydb.cursor()
+s="SELECT * from book"
+mycursor.execute(s)
+result=mycursor.fetchall()
+for rec in result:
+    print(rec)
+import mysql.connector
+mydb=mysql.connector.connect(host='localhost',password='1234',user='root',database='sods')
+mycursor=mydb.cursor()
+s="DELETE FROM book WHERE price=450"
+mycursor.execute(s)
+mydb.commit()
+import mysql.connector
+mydb=mysql.connector.connect(host='localhost',password='1234',user='root',database='sods')
+mycursor=mydb.cursor()
+s="SELECT * from book"
+mycursor.execute(s)
+result=mycursor.fetchall()
+for rec in result:
+    print(rec)
+
